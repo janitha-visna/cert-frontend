@@ -25,7 +25,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-
+import { ThemeToggle } from "@/components/theme.toggle";
 // This is sample data.
 const data = {
   user: {
@@ -162,14 +162,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
+
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
-      <SidebarFooter>
+
+      <SidebarFooter className="flex items-center justify-between gap-2 px-2">
         <NavUser user={data.user} />
+
+        {/* Dark mode toggle */}
+        <ThemeToggle />
       </SidebarFooter>
+
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }
