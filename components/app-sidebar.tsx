@@ -13,6 +13,8 @@ import {
   Settings2,
   SquareTerminal,
 } from "lucide-react"
+import { LayoutDashboard, CalendarDays, FolderKanban } from "lucide-react";
+
 
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
@@ -29,7 +31,7 @@ import { ThemeToggle } from "@/components/theme.toggle";
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
+    name: "shadcna",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
@@ -52,91 +54,47 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
+      title: "Dashboard",
+      url: "/dashboard",
+      icon: LayoutDashboard,
       isActive: true,
+    },
+    {
+      title: "Calendar",
+      url: "/calendar",
+      icon: CalendarDays,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "My Calendar",
+          url: "/calendar/my",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
+          title: "Team Calendar",
+          url: "/calendar/team",
         },
       ],
     },
     {
-      title: "Models",
-      url: "#",
-      icon: Bot,
+      title: "Client Files",
+      url: "/clients",
+      icon: FolderKanban,
       items: [
         {
-          title: "Genesis",
-          url: "#",
+          title: "All Clients",
+          url: "/clients",
         },
         {
-          title: "Explorer",
-          url: "#",
+          title: "Active Clients",
+          url: "/clients/active",
         },
         {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
+          title: "Archived Clients",
+          url: "/clients/archived",
         },
       ],
     },
   ],
+
   projects: [
     {
       name: "Design Engineering",
@@ -154,7 +112,7 @@ const data = {
       icon: Map,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -165,14 +123,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
 
       <SidebarFooter className="flex items-center justify-between gap-2 px-2">
+        <ThemeToggle />
         <NavUser user={data.user} />
 
         {/* Dark mode toggle */}
-        <ThemeToggle />
       </SidebarFooter>
 
       <SidebarRail />
