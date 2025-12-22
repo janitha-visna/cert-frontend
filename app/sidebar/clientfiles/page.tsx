@@ -5,15 +5,12 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { ClientFilesToolbar } from "@/components/clientfiles/toolbar/ClientFilesToolbar";
 import { CardGrid } from "@/components/clientfiles/cards/CardGrid";
 import { useCardSearch } from "@/components/clientfiles/hooks/useCardSearch";
-
+import { cards } from "@/components/clientfiles/cards";
 export default function TestPage() {
   const [search, setSearch] = useState("");
 
-  const cards = Array.from({ length: 40 }, (_, i) => ({
-    id: i + 1,
-    title: `Card ${i + 1}`,
-    content: "This is some sample content for the card.",
-  }));
+ 
+
 
   const filteredCards = useCardSearch(cards, search);
 
