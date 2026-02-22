@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useMemo } from "react";
-import { Layout } from "@/components/lifecycleview/Layout";
+import { Layout } from "@/components/lifecycleview/Layout"; 
 import { FolderGrid } from "@/components/lifecycleview/FolderGrid";
 import { FolderDetails } from "@/components/lifecycleview/FolderDetails";
 import {
@@ -10,7 +10,7 @@ import {
   MOCK_AUDIT_DATES,
   MOCK_REMINDERS,
   MOCK_ASSIGNMENTS,
-} from "@/components/lifecycleview/constants";
+} from "@/components/lifecycleview/constants"
 import { PaymentModal } from "@/components/lifecycleview/Modals/PaymentModal";
 import { ClientInfoModal } from "@/components/lifecycleview/Modals/ClientInfoModal";
 import { AuditDatesModal } from "@/components/lifecycleview/Modals/AuditDatesModal";
@@ -320,4 +320,5 @@ export default function LifecyclePage() {
       />
     </>
   );
-}
+};
+

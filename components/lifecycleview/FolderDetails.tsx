@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Folder } from '../types';
-import { storageService, StorageFile } from '../services/storageService';
+import { Folder } from './types';
+import { storageService,StorageFile } from './services/storageService';
 import { ArrowLeft, UploadCloud, File as FileIcon, MoreVertical, Download, Trash2, Calendar, FileText } from 'lucide-react';
 
 interface FolderDetailsProps {
